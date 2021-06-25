@@ -3,34 +3,38 @@
 
 <head>
     <title>Random Number Guessing Game</title>
-
-
+    <script type = "text/javascript" src="gameCode.js"></script>.
+    
     <style>
-        
-        h2,h3{
+        h2,
+        h3 {
             font-size: 16px;
             margin-right: 20px;
             margin-left: 20px;
         }
-        p,label,input,select {
+
+        p,
+        label,
+        input,
+        select {
             font-size: 14px;
             margin-right: 20px;
-            margin-left: 20px; 
-            
+            margin-left: 20px;
+
         }
 
-        #mainBorder{
-            border: solid orangered;
+        #mainBorder {
+            border: solid grey;
             width: 450px;
             margin-right: 15px;
             margin-left: 15px;
             padding: 10px;
-            background-color: rgb(151, 125, 39);
+            background-color: rgb(58, 147, 153);
         }
 
-        div{
-            border: solid #dfa60a;
-            background-color: peru;
+        div {
+            border: solid grey;
+            background-color: rgb(70, 189, 197);
             width: 375px;
             margin-right: 15px;
             margin-left: 15px;
@@ -38,40 +42,49 @@
         }
     </style>
 </head>
+
 <body>
+    <script>
+        
+    </script>
     <div id="mainBorder">
-    <h2>Random Number Guessing Game</h2>
-<div>
-    <!--Guessing Game Select-->
-    <h2>Game Select</h2>
+        <h2>Random Number Guessing Game</h2>
+        <div>
+            <!--Guessing Game Select-->
+            <h2>Game Select</h2>
 
-    <select>
-        <option>--Select Game--</option>
-        <option>3 Digit Randomized</option>
-        <option>5 Digit Randomized</option>
-        <option>7 Digit Randomized</option>
-    </select>
-</div>
-    <h2>Instructions</h2>
-    <div>
-    <p>Computer has generated a Randomized set of Digits. You will have 5 tries to guess the sequence.</p>
+            <select id="gameSelect">
+                <option>--Select Game--</option>
+                <option>3 Digit Randomized</option>
+                <option>5 Digit Randomized</option>
+                <option>7 Digit Randomized</option>
+            </select>
+        </div>
+        <h2>Instructions</h2>
+        <div>
+            <p style="font-size: 100%;">The computer has generated a randomized set of digits. Numbers between 1 and 7 can repeat. You will have a set number
+                of tries to guess the sequence.</p>
+        </div>
+
+        <div>
+            <h3 >Attempts Left: <span id="attemptCounter"></span> </h3>
+        </div>
+
+        <h2>Number Sequence:</h2>
+        <div>
+            <h3 id="sequence" style="font-size: 18px;"></h3>
+        </div>
+        <div>
+            <label>Your Guess:</label><br />
+            <input id="entry" type="text" name="userGuess" /><br /><br />
+            <input type="button" value="Enter" onclick="runCompare()" />
+            <input id="gameStart" type="button" value="Start New Game" onclick="runGame()">
+            <p id="gameMessage" style="font-size: 18px;"></p>
+        </div>
+
     </div>
 
-    <div>
-        <h3>Your Score:</h3>
-        <h3>Highscore:</h3>
-    </div>
 
-    <h2>Number Sequence:</h2>
-<div>
-    <label>Your Guess:</label><br/>
-    <input type="text" name="userGuess"/><br/><br/>
-    <input type="button" value="Enter"/>
-</div>
-
-</div>    
-    
-    
 </body>
 
 </html>
