@@ -61,6 +61,19 @@ function runCompare(){
             if(attemptsLeft == 1){
                 document.getElementById('attemptCounter').style.color = "Red"
             }
+            if(attemptsLeft <= 3){
+                var hintString =' '
+                    for (var i = 0 ; i < randomNum.length; i++){
+                    if (randomNum.charAt(i) < 4){
+                        hintString = hintString.concat("<br/>X number " + (i+1) + " is less than 4")
+                    }
+                    else if (randomNum.charAt(i) >=4){
+                        hintString = hintString.concat("<br/>X number " + (i+1) + " is greater than or equal to 4")
+                    }
+                }
+                    document.getElementById('hint').innerHTML = hintString
+
+            }
 
 
         }
@@ -86,6 +99,19 @@ function runCompare(){
                 document.getElementById('gameMessage').innerHTML = "Congratulations! You guessed right! Play Again?"
                 document.getElementById('attemptCounter').innerHTML = 0
                 setAttemptString(" ")
+            }
+            if(attemptsLeft <= 3){
+                var hintString =' '
+                    for (var i = 0 ; i < randomNum.length; i++){
+                    if (randomNum.charAt(i) < 4){
+                        hintString = hintString.concat("<br/>X number " + (i+1) + " is less than 4")
+                    }
+                    else if (randomNum.charAt(i) >=4){
+                        hintString = hintString.concat("<br/>X number " + (i+1) + " is greater than or equal to 4")
+                    }
+                }
+                    document.getElementById('hint').innerHTML = hintString
+
             }
             if((attemptsLeft == 0) && (randomNum !=  entry)){
                 document.getElementById('gameMessage').innerHTML = "The correct sequence was " +randomNum + ". Play Again?"
@@ -124,6 +150,19 @@ function runCompare(){
             }
             if(attemptsLeft == 1){
                 document.getElementById('attemptCounter').style.color = "Red"
+            }
+            if(attemptsLeft <= 3){
+                var hintString =' '
+                    for (var i = 0 ; i < randomNum.length; i++){
+                    if (randomNum.charAt(i) < 4){
+                        hintString = hintString.concat("<br/>X number " + (i+1) + " is less than 4")
+                    }
+                    else if (randomNum.charAt(i) >=4){
+                        hintString = hintString.concat("<br/>X number " + (i+1) + " is greater than or equal to 4")
+                    }
+                }
+                    document.getElementById('hint').innerHTML = hintString
+
             }
             
         }
@@ -177,7 +216,7 @@ function runGame(){
             setRandNum(RandomNum)
             
             array = ['X','X','X']
-            attemptsLeft = 6
+            attemptsLeft = 5
             document.getElementById('attemptCounter').innerHTML = attemptsLeft
             document.getElementById('sequence').innerHTML = array.join(' ')
         }
@@ -185,7 +224,7 @@ function runGame(){
             var RandomNum = generateRandomNumber(numInts)
             setRandNum(RandomNum)
             array = ['X','X','X','X','X']
-            attemptsLeft = 7
+            attemptsLeft = 6
             document.getElementById('attemptCounter').innerHTML = attemptsLeft
             document.getElementById('sequence').innerHTML = array.join(' ')
             
@@ -194,7 +233,7 @@ function runGame(){
             var RandomNum = generateRandomNumber(numInts)
             setRandNum(RandomNum)
             array = ['X','X','X','X','X','X','X']
-            attemptsLeft = 9  
+            attemptsLeft = 7  
             document.getElementById('attemptCounter').innerHTML = attemptsLeft
             document.getElementById('sequence').innerHTML = array.join(' ')
 
